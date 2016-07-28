@@ -1,7 +1,7 @@
 #ifndef COMPUTATION_H
 #define COMPUTATION_H
 
-#include "Question.h"
+#include "../Question.h"
 
 class Computation : public Question {
 public:

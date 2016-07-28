@@ -10,15 +10,15 @@
 #include "Student.h"
 #include "Quiz.h"
 
-#include "questions/Question.h"
-#include "questions/MultipleChoice.h"
-#include "questions/TrueFalse.h"
-#include "questions/Computation.h"
+#include "Question.h"
+#include "types/MultipleChoice.h"
+#include "types/TrueFalse.h"
+#include "types/Computation.h"
 
 using namespace std;
 
 // Constructor: init ifstream
-Quiz::Quiz() : file("quiz/questions/questions.txt"), score_(0), student_(0,"","") {}
+Quiz::Quiz() : file("questions/questions.txt"), score_(0), student_(0,"","") {}
 
 // Destructor: free up memory allocated
 Quiz::~Quiz () {

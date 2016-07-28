@@ -2,7 +2,7 @@
 #define MULTIPLE_CHOICE_H
 
 #include <string>
-#include "Question.h"
+#include "../Question.h"
 
 class MultipleChoice : public Question {
 public:

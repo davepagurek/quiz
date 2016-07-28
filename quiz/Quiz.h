@@ -6,7 +6,7 @@
 
 #include "Score.h"
 #include "Student.h"
-#include "questions/Question.h"
+#include "Question.h"
 
 class Quiz {
 public:
