@@ -1,5 +1,3 @@
-// Quiz facade class which interacts with all other classes in application
-
 #include <assert.h>
 #include <algorithm>
 #include <fstream>
@@ -7,7 +5,6 @@
 #include <typeinfo>
 
 #include "Score.h"
-#include "Student.h"
 #include "Quiz.h"
 
 #include "Question.h"
@@ -68,26 +65,7 @@ void Quiz::getQuestions() {
 		}
 	}
 	score_ = Score(questions_.size());
-}
-
-// Make new student object
-void Quiz::getStudentInfo () {
-	int id;
-	string first_name, last_name;
-
-	cout << "*************" << endl;
-	cout << "CS 247 - Quiz" << endl;
-	cout << "*************" << endl;
-	cout << "Please enter your student information below:" << endl;
-	cout << "First Name: ";
-	cin >> first_name;
-	cout << "Last Name: ";
-	cin >> last_name;
-	cout << "ID Number: ";
-	cin >> id;
-	cout << endl;
-
-	student_ = Student(id, first_name, last_name);
+	random_shuffle (questions_.begin(), questions_.end());
 }
 
 // Ask the next quesiton in sequence

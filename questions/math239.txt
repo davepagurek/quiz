@@ -1,0 +1,63 @@
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+A graph is connected if and only if it has a spanning tree.
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
+Question: True/False
+
+T
