@@ -64,7 +64,7 @@ void Quiz::getQuestions() {
 		}
 	}
 	score_ = Score(questions_.size());
-	random_shuffle (questions_.begin(), questions_.end());
+	//random_shuffle (questions_.begin(), questions_.end());
 }
 
 // Ask the next quesiton in sequence
