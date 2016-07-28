@@ -1,0 +1,13 @@
+Question: Multiple Choice
+What is the mass of the sun?
+a) not the mass of the sun
+b) not the mass of the sun
+c) the mass of the sun
+d) not the mass of the sun
+c
+Question: Computation
+What is the sum of 4+3?
+7
+Question: True/False
+CS247 is a cool course.
+T
