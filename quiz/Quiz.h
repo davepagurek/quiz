@@ -5,7 +5,6 @@
 #include <vector>
 
 #include "Score.h"
-#include "Student.h"
 #include "Question.h"
 
 class Quiz {
@@ -17,11 +16,9 @@ public:
 	void start();
 	void getQuestions();
 	void askQuestion(Question * &q);
-	void getStudentInfo();
 
 private:
 	std::ifstream file;
-	Student student_;
 	Score score_;
 	std::vector<Question *> questions_;
 };
