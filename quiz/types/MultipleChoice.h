@@ -1,6 +1,7 @@
 #ifndef MULTIPLE_CHOICE_H
 #define MULTIPLE_CHOICE_H
 
+#include <iostream>
 #include <string>
 #include "../Question.h"
 
@@ -14,6 +15,14 @@ public:
 	std::string b() const {return b_;}
 	std::string c() const {return c_;}
 	std::string d() const {return d_;}
+
+protected:
+	virtual void print(std::ostream& sout) {
+		sout << "Question: " << question_ << std::endl;
+		sout << a_ << std::endl << b_ << std::endl;
+		sout << c_ << std::endl << d_ << std::endl;
+		sout << "Answer: ";
+	}
 
 private:
 	std::string a_;

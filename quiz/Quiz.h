@@ -21,6 +21,7 @@ private:
 	std::ifstream file;
 	Score score_;
 	std::vector<Question *> questions_;
+	std::vector<Question *> incorrect_;
 };
 
 #endif

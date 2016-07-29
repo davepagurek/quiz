@@ -4,6 +4,12 @@
 #include<string>
 
 class Question {
+
+friend std::ostream& operator<< (std::ostream& sout, Question& q) {
+	q.print(sout);
+	return sout;
+}
+
 public:
 	Question(std::string q, std::string ans, std::string t) : question_(q), answer_(ans), type_(t) {}
 
@@ -19,6 +25,8 @@ public:
 	std::string type() 		const {return type_;}
 
 protected:
+	virtual void print(std::ostream& sout) const = 0;
+
 	std::string question_;
 	std::string answer_;
 
