@@ -1,12 +1,13 @@
 #ifndef QUESTION_H
 #define QUESTION_H
 
-#include<string>
+#include <iostream>
+#include <string>
 
 class Question {
 
-friend std::ostream& operator<< (std::ostream& sout, Question& q) {
-	q.print(sout);
+friend std::ostream& operator<< (std::ostream& sout, Question * & q) {
+	q->print(sout);
 	return sout;
 }
 

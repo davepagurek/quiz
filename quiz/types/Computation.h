@@ -10,7 +10,7 @@ public:
 	Computation(std::string q, std::string ans) : Question(q, ans, "comp") {}
 
 protected:
-	virtual void print(std::ostream& sout) {
+	virtual void print(std::ostream& sout) const {
 		sout << "Question: " << question_ << "." << std::endl;
 		sout << "Answer: ";
 	}

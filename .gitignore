@@ -2,3 +2,4 @@
 *.o
 exec
 exec.dSYM/
+questions/

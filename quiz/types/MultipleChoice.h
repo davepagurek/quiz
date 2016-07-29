@@ -17,7 +17,7 @@ public:
 	std::string d() const {return d_;}
 
 protected:
-	virtual void print(std::ostream& sout) {
+	virtual void print(std::ostream& sout) const {
 		sout << "Question: " << question_ << std::endl;
 		sout << a_ << std::endl << b_ << std::endl;
 		sout << c_ << std::endl << d_ << std::endl;
