@@ -42,7 +42,7 @@ void Quiz::start () {
 		transform(ans.begin(), ans.end(), ans.begin(), ::toupper);
 
 		if (ans == q->answer()) {
-			cout << "Correct Answer!" << endl;
+			cout << "Correct Answer!" << endl << endl;
 			++inc_score;
 		} else {
 			cout << "The answer was: " << q->answer() << endl << endl;
