@@ -29,12 +29,12 @@ void Quiz::start () {
 	for (auto q : questions_) {
 		askQuestion(q);
 	}
-	cout << endl << "Your score is: " << score_ << "." << endl;
-	cout << endl << "Incorrect questions:" << endl;
+	cout << "Your score is: " << score_ << "." << endl;
+	cout << endl << "Incorrect questions:" << endl << endl;
 
 	for (auto q : incorrect_) {
 		cout << q;
-		cout << "Answer: " << q->answer() << endl;
+		cout << "Answer: " << q->answer() << endl << endl;
 	}
 }
 
