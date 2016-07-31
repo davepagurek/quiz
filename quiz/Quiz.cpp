@@ -15,7 +15,7 @@
 using namespace std;
 
 // Constructor: init ifstream
-Quiz::Quiz() : file("questions/sci238_1.txt"), score_(0) {}
+Quiz::Quiz(string file) : file("questions/" + file + ".txt"), score_(0) {}
 
 // Destructor: free up memory allocated
 Quiz::~Quiz () {
@@ -29,10 +29,12 @@ void Quiz::start () {
 	for (auto q : questions_) {
 		askQuestion(q);
 	}
-	cout << "Your score is: " << score_ << "." << endl;
+	cout << endl << "Your score is: " << score_ << "." << endl;
+	cout << endl << "Incorrect questions:" << endl;
 
 	for (auto q : incorrect_) {
-
+		cout << q;
+		cout << "Answer: " << q->answer() << endl;
 	}
 }
 

@@ -9,7 +9,7 @@
 
 class Quiz {
 public:
-	Quiz();
+	Quiz(std::string);
 	~Quiz();
 
 	// Void game methods
