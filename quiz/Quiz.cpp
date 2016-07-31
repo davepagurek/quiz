@@ -15,7 +15,7 @@
 using namespace std;
 
 // Constructor: init ifstream
-Quiz::Quiz(string file) : file("questions/" + file + ".txt"), score_(0) {}
+Quiz::Quiz (string file) : file("questions/" + file + ".txt"), score_(0) {}
 
 // Destructor: free up memory allocated
 Quiz::~Quiz () {
@@ -32,10 +32,24 @@ void Quiz::start () {
 	cout << "Your score is: " << score_ << "." << endl;
 	cout << endl << "Incorrect questions:" << endl << endl;
 
+	Score inc_score(incorrect_.size());
+	string ans;
+
+	// Go through incorrect questions again
 	for (auto q : incorrect_) {
 		cout << q;
-		cout << "Answer: " << q->answer() << endl << endl;
+		cin >> ans;
+		transform(ans.begin(), ans.end(), ans.begin(), ::toupper);
+
+		if (ans == q->answer()) {
+			cout << "Correct Answer!" << endl;
+			++inc_score;
+		} else {
+			cout << "The answer was: " << q->answer() << endl << endl;
+		}
 	}
+
+	cout << "Your scored " << inc_score << " when asked the questions again." << endl;
 }
 
 // Populate questions_ with questions from questions.txt
@@ -68,7 +82,7 @@ void Quiz::getQuestions() {
 			}
 		}
 	}
-	score_ = Score(questions_.size());
+	score_ = Score (questions_.size());
 	random_shuffle (questions_.begin(), questions_.end());
 }
 

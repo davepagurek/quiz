@@ -7,7 +7,7 @@
 
 class MultipleChoice : public Question {
 public:
-	MultipleChoice(std::string q, std::string a, std::string b, std::string c, std::string d, std::string ans)
+	MultipleChoice (std::string q, std::string a, std::string b, std::string c, std::string d, std::string ans)
 	: a_(a), b_(b), c_(c), d_(d) , Question(q, ans, "mc") {}
 
 	// Accessors
@@ -17,7 +17,7 @@ public:
 	std::string d() const {return d_;}
 
 protected:
-	virtual void print(std::ostream& sout) const {
+	virtual void print (std::ostream& sout) const {
 		sout << "Question: " << question_ << std::endl;
 		sout << a_ << std::endl << b_ << std::endl;
 		sout << c_ << std::endl << d_ << std::endl;
