@@ -16,6 +16,9 @@ friend std::ostream& operator<< (std::ostream& sout, const Score& s) {
 
 public:
 	Score(int m) : score_(0), max_(m) {}
+	void increment_max () {
+		max_ ++;
+	}
 
 private:
 	int score_;

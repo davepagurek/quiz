@@ -93,7 +93,6 @@ void Quiz::getQuestions () {
 			}
 		}
 	}
-	score_ = Score (questions_.size());
 	random_shuffle (questions_.begin(), questions_.end(), myrandom);
 }
 
@@ -115,4 +114,5 @@ void Quiz::askQuestion (Question * &q) {
 		cout << "Incorrect, the answer was: " << q->answer() << "." << endl;
 		incorrect_.push_back(q);
 	} cout << endl;
+	score_.increment_max();
 }
