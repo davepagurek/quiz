@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <algorithm>
+#include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <typeinfo>
@@ -15,7 +16,7 @@
 using namespace std;
 
 // Constructor: init ifstream
-Quiz::Quiz (string file) : file("questions/" + file + ".txt"), score_(0) {}
+Quiz::Quiz (string file, int s) : file("questions/" + file + ".txt"), score_(0), seed_(s) {}
 
 // Destructor: free up memory allocated
 Quiz::~Quiz () {
@@ -24,11 +25,18 @@ Quiz::~Quiz () {
 	}
 }
 
+// Random number generator with seed
+int myrandom (int i) { return rand() % i; }
+
 // Start the quiz
 void Quiz::start () {
 	for (auto q : questions_) {
 		askQuestion(q);
 	}
+	end();
+}
+
+void Quiz::end () {
 	cout << "Your score is: " << score_ << "." << endl;
 	cout << endl << "Incorrect questions:" << endl << endl;
 
@@ -48,12 +56,15 @@ void Quiz::start () {
 			cout << "The answer was: " << q->answer() << endl << endl;
 		}
 	}
-
 	cout << "Your scored " << inc_score << " when asked the questions again." << endl;
+
+	exit(0);
 }
 
 // Populate questions_ with questions from questions.txt
-void Quiz::getQuestions() {
+void Quiz::getQuestions () {
+	srand (seed_);
+
 	if (file.fail()) {
 		cout << "Couldn't get questions." << endl;
 	} else {
@@ -83,7 +94,7 @@ void Quiz::getQuestions() {
 		}
 	}
 	score_ = Score (questions_.size());
-	random_shuffle (questions_.begin(), questions_.end());
+	random_shuffle (questions_.begin(), questions_.end(), myrandom);
 }
 
 // Ask the next quesiton in sequence
@@ -94,7 +105,10 @@ void Quiz::askQuestion (Question * &q) {
 	cin >> ans;
 	transform(ans.begin(), ans.end(), ans.begin(), ::toupper);
 
-	if (ans == q->answer()) {
+	if (ans == "EXIT") {
+		cout << endl;
+		end();
+	} else if (ans == q->answer()) {
 		cout << "Correct Answer!" << endl;
 		++score_;
 	} else {

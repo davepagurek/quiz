@@ -9,15 +9,17 @@
 
 class Quiz {
 public:
-	Quiz(std::string);
+	Quiz(std::string, int seed);
 	~Quiz();
 
 	// Void game methods
 	void start();
+	void end();
 	void getQuestions();
 	void askQuestion(Question * &q);
 
 private:
+	int seed_;
 	std::ifstream file;
 	Score score_;
 	std::vector<Question *> questions_;
