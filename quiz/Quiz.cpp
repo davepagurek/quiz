@@ -55,6 +55,7 @@ void Quiz::end () {
 		} else {
 			cout << "The answer was: " << q->answer() << endl << endl;
 		}
+		score_.increment_max();
 	}
 	cout << "Your scored " << score_ << " when asked the questions again." << endl;
 
