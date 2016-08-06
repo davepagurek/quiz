@@ -10,7 +10,7 @@ friend Score& operator++(Score& s) {
 	return s;
 }
 friend std::ostream& operator<< (std::ostream& sout, const Score& s) {
-	sout << s.score_ << "/" << s.max_;
+	sout << s.score_ << "/" << s.max_ << " (" << ((double) s.score_ / (double) s.max_)*100 << "%)";
 	return sout;
 }
 

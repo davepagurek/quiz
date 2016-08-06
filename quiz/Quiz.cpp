@@ -40,7 +40,7 @@ void Quiz::end () {
 	cout << "Your score is: " << score_ << "." << endl;
 	cout << endl << "Incorrect questions:" << endl << endl;
 
-	Score inc_score(incorrect_.size());
+	score_.reset();
 	string ans;
 
 	// Go through incorrect questions again
@@ -51,12 +51,12 @@ void Quiz::end () {
 
 		if (ans == q->answer()) {
 			cout << "Correct Answer!" << endl << endl;
-			++inc_score;
+			++score_;
 		} else {
 			cout << "The answer was: " << q->answer() << endl << endl;
 		}
 	}
-	cout << "Your scored " << inc_score << " when asked the questions again." << endl;
+	cout << "Your scored " << score_ << " when asked the questions again." << endl;
 
 	exit(0);
 }
