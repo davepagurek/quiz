@@ -16,7 +16,7 @@
 using namespace std;
 
 // Constructor: init ifstream
-Quiz::Quiz (string file, int s) : file("questions/" + file + ".txt"), score_(0), seed_(s) {}
+Quiz::Quiz (string file, int s) : file("questions/sci238_" + file + ".txt"), score_(0), seed_(s) {}
 
 // Destructor: free up memory allocated
 Quiz::~Quiz () {
